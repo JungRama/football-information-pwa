@@ -1,4 +1,4 @@
-importScripts('https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js');
+// importScripts('https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js');
 // NOTE : ALL API SETTING ON => setting.js
 
 /* --------------------- CALL AND INIT DATA ON COMPONENT -------------------- */
