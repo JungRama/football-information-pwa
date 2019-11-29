@@ -21,7 +21,7 @@ function addToFavorite(element, id, image, name, founded, venue){
         store.add(data)
         return tx.complete
     }).then(() => {
-        element.style.display = "none"
+        // element.style.display = "none"
         M.toast({html: 'Success added to favorite!'})
     })
 }

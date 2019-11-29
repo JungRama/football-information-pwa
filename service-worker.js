@@ -19,20 +19,26 @@ workbox.precaching.precacheAndRoute([
 	{ url: '/images/icons/icon-192x192.png', revision: '1' }, 
 	{ url: '/images/icons/icon-512x512.png', revision: '1' },
 
-	// { url: '/js/pages/favorite.js', revision: '1' }, 
-	// { url: '/js/pages/matches.js', revision: '1' }, 
-	// { url: '/js/pages/teams.js', revision: '1' }, 
-
-	// { url: '/pages/favorite.html', revision: '1' }, 
-	// { url: '/pages/matches.html', revision: '1' }, 
-	// { url: '/pages/teams.html', revision: '1' }
-
 ]);
 
 workbox.routing.registerRoute(
 	new RegExp('/pages/'),
-	workbox.strategies.staleWhileRevalidate({
+	workbox.strategies.networkFirst({
 		cacheName: 'pagesCache'
+	})
+);
+
+workbox.routing.registerRoute(
+	'https://api.football-data.org/v2/competitions/2021/matches',
+	workbox.strategies.networkFirst({
+		cacheName: 'API'
+	})
+);
+
+workbox.routing.registerRoute(
+	'https://api.football-data.org/v2/competitions/2021/teams',
+	workbox.strategies.networkFirst({
+		cacheName: 'API'
 	})
 );
 

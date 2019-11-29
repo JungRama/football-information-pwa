@@ -1,4 +1,3 @@
-// importScripts('https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js');
 // NOTE : ALL API SETTING ON => setting.js
 
 /* --------------------- CALL AND INIT DATA ON COMPONENT -------------------- */
@@ -45,12 +44,12 @@ function callAPImatch(){
             headers: {'content-type': 'application/json'}
         });
 
-        workbox.routing.registerRoute(
-            dataJson,
-            workbox.strategies.staleWhileRevalidate({
-                cacheName: urlMatch
-            })
-        );
+        // workbox.routing.registerRoute(
+        //     dataJson,
+        //     workbox.strategies.staleWhileRevalidate({
+        //         cacheName: urlMatch
+        //     })
+        // );
 
         // caches.open('pwa-football-v1-submission')
         //     .then(cache => cache.put(urlMatch, dataJson))
